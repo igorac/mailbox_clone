@@ -1,0 +1,52 @@
+<?php
+	//echo "<pre>";
+	//print_r($this->view->profile);
+	//echo "</pre>";
+?>
+<div class="container-principal" id="mailbox-enviar">
+
+	<header class="topo color-default">
+		<div class="row">
+			<div class="col-12 col-md-12 d-flex justify-content-center">
+				<h1 class="Logo"><i class="fab fa-drupal"></i><span>Mailbox</span></h1>
+			</div>
+		</div>
+    </header>
+
+    <div class="meio-profile mt-5 mr-5">
+
+    	<div class="row">
+    		<div class="col-8">
+    			<form enctype="multipart/form-data" action="/alterar_imagem" method="POST">
+
+	    			<div class="border-imagem-alt d-flex">
+	    				
+		    				<div class="container-imagem-alt">
+		    					<?php if ($this->view->profile['imagem'] != '') { ?>
+		    						<img src="upload/<?= $this->view->profile['imagem'] ?>" class="img-alterado">
+		    					<?php } else { ?>
+		    						<img class="img-alterado">
+		    					<?php } ?>
+		    				</div>
+	    				
+	    				<div class="col-8 ml-5">
+							<input type="text" class="form-control" placeholder="First name" value="<?= $this->view->profile['nome'] ?>" disabled>
+	    				</div>
+	    			</div>
+
+	    			<div class="ml-2 mt-2">
+	    				<label for="imagem">Imagem de Perfil</label>
+						<input type="file" style="border:none;" name="imagem" class="form-control-file" id="id_imagem_alterar">
+	    			</div>
+
+	    			<div class="mt-4 d-flex justify-content-end">
+	    				<button type="submit" class="text-white btn btn-dark mr-3">Editar</button>
+	    				<a href="/profile" class="text-white btn btn-dark">Voltar</a>
+	    			</div>
+	    		</form>	
+    		</div>
+    	</div>
+
+    </div>
+
+</div>

@@ -1,0 +1,518 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+ul {
+	list-style: none;
+}	
+
+
+body,html {
+	font-size: 18px;
+	overflow-x: hidden;
+}
+
+body #cadastrar {
+	color: #fff;
+}
+
+.color-default {
+	background-color: #003748;
+}
+
+/* Login
+*/
+#cadastrar .modal-personalizado {
+	margin: 30px auto -14px auto;
+	width: 500px;
+	border-radius: 8px;
+}
+
+/*
+#cadastrar .logo-header-modal {
+	color: #fff;
+	font-size: 4em;
+	margin: 5px;
+}
+*/
+
+.modal-personalizado {
+	margin: 60px auto 30px auto;
+	width: 500px;
+	border-radius: 8px;
+}
+
+.header-modal {
+	display: flex;
+	justify-content: center;
+}
+
+.logo-header-modal {
+	color: #fff;
+	font-size: 4em;
+	margin: 40px;
+}
+
+.body-modal {
+	padding: 0px 50px;
+	margin: 20px 0px;
+}
+
+#cadastrar .footer-modal .botao {
+	color: #003748;
+	background-color: #fff;
+	margin: 5px 3px 19px 5px;
+	width: 120px;
+	height: 40px;
+}
+
+.footer-modal .botao {
+	color: #003748;
+	background-color: #fff;
+	margin: 40px 5px 45px 5px;
+	width: 120px;
+}
+
+/* Rodapé
+
+
+#mailbox-enviar .rodape {
+	height: 100px;
+}
+
+#cadastrado_sucesso .rodape {
+	position: relative;
+	bottom:  -78px;
+	height: 100px;
+}
+
+#cadastrar .rodape {
+	position: relative;
+	bottom:  -76px;
+	height: 100px;
+}
+
+.rodape {
+	position: relative;
+	bottom: -44px;
+	height: 100px;
+}
+
+
+.texto-rodape {
+	color: #fff;
+	font-size: 1.5em;
+	line-height: 2em;
+	margin-top: 22px;
+}
+
+*/
+
+
+/* Inscreverse View
+*/
+
+.mensagem {
+	margin:30px auto; 
+	text-align: center; 
+	font-size: 1.2em;
+}
+
+
+
+/* Logo view Login
+*/
+
+.topo {
+	height: 100px;
+}
+
+#mailbox-enviar .logo .fa-drupal {
+	font-size: 1.6em;
+	line-height: 1.2em;
+	margin: 7px 2px 2px 2px;
+	color: #fff;
+
+}
+
+.logo .fa-drupal {
+	font-size: 2em;
+	margin: 5px;
+	color: #fff;
+}
+
+.logo span {
+	color: #fff;
+	position: relative;
+	top: -10px;
+	margin-left: 10px;
+}
+
+.logo-texto {
+	margin-top: 10px;
+	line-height: 2.3em;
+
+}
+
+/* Formulario
+*/
+
+#form_cadastro input[type="text"],
+#form_cadastro input[type="email"],
+#form_cadastro input[type="date"],
+#form_cadastro input[type="password"] {
+	height: 35px;
+}
+
+
+input.error {
+	border: 1px solid #cc0000;
+	color: #cc0000!important;
+
+}
+		  
+input.valid {
+	border: 1px solid #00cc00;
+	color: #00cc00!important;
+}
+
+.margin-bottom {
+	margin-bottom: 35px;
+}
+
+#form_cadastro .label-componente {
+	font-size: .9em;
+	line-height: 1.4em;
+}
+
+.label-sexo {
+	line-height: 2em;
+}
+
+/* Menu
+*/
+
+.container-menu {
+	height: 100px;
+}
+
+.icon-menu {
+	line-height: 2.4em;
+	color: #fff;
+}
+
+
+.link-menu {
+	color: #fff;
+	cursor: pointer;
+	width: 100%;
+}
+
+.link-menu:hover {
+	color: #fff;
+}
+
+
+
+@media (max-width: 767px) 
+{
+	
+	.icon-menu {
+		color: #fff;
+		width: 50px;
+		padding-left: 15px;
+		margin-right: 3px;
+	}
+
+	.container-menu {
+		position: relative;
+		top: -15px;
+	}
+
+	ul.menu {
+		display: block;
+		background-color: #003748;
+		width: 100%;
+		text-align: left;
+	}
+
+
+}
+
+
+
+/* Conteudo do Mailbox
+*/
+
+.container-principal-imagem {
+	border-top: 1px solid black;
+	border-radius: 5px 5px 0px 0px;
+	height: 190px;
+	width: 300px;
+	margin-top: 60px;
+	box-shadow: 0 0 0.2em #000;
+}
+
+
+.container-imagem {
+	background-color: #fff;
+	width: 128px;
+	height: 128px;
+	margin: 10px 0px 0px 15px;
+}
+
+.container-dados-mailbox {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-radius: 0px 0px 5px 5px;
+	box-shadow: 0px 0px 0.3em #000;
+	width: 300px;
+	height: 100px;
+	font-size: 0.7em;
+}
+
+.item-dados-mailbox {
+	text-align: center;
+	margin: 5px;
+	width: 50%;
+	font-size: 2em;
+}
+
+.nome-usuario-mailbox {
+	margin: 8px 8px 8px 15px;
+	color: #fff;
+	font-size: 0.9em;
+	font-weight: bold;
+}
+
+.mini-menu-opcoes {
+	background-color: #fff;
+	box-shadow: 0px 0px 0.2em #000;
+	border-radius: 2px;
+}
+
+.container-botao-enviar {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 18px;
+	margin-left: 490px;
+}
+
+.container-opcoes {
+	display: flex;
+	align-items: flex-end;
+	margin-bottom: 18px;
+
+}
+
+.mini-menu-opcoes a{
+	padding: 5px;
+	margin: 5px;
+}
+
+.excluir-lido {
+	border: none;
+	//margin-left: 5px; 
+	margin: 5px;
+	background: white;
+}
+
+.lido {
+	border: none;
+	margin-left: 5px; 
+	margin-right: 5px; 
+	background: white;
+	position: relative;
+	top: 2px;
+}
+
+/* Corpo do Mailbox
+*/
+
+.box-email {
+	//width: 1250px; 
+	width: 86.6%;
+	margin: 0 auto;
+}
+
+.table-emails {
+	display: block; 
+	overflow-y: scroll;
+	border-collapse:separate;
+	border: 1px solid #000;
+	border-radius: 5px;
+	height: 130px;
+}
+
+.th-email {
+	width: 270px;
+	//width: 21.6%;
+}
+
+.th-titulo {
+	width: 240px;
+	//width: 19.2%;
+}
+
+.th-descricao {
+	width: 500px;
+	//width: 40%;
+}
+
+.th-data {
+	width: 200px;
+	//width: 16%;
+}
+
+.thead-table-emails  tr{
+	text-align: center;
+	font-size: 1.5em;
+}
+
+
+.checkbox_mailbox {
+	margin: 7px 10px 3px 3px;
+
+}
+
+.nome-usuario {
+	margin: 3px 80px 3px 8px;
+	font-weight: bold;
+	width: 270px;
+}
+
+.body-mensagem {
+	margin: 3px;
+	font-weight: bold;
+	width: 240px;
+}
+
+.descricao {
+	margin: 3px;
+	width: 500px;
+}
+
+.data-mensagem {
+	font-size: 0.8em;
+	margin: 3px;
+	font-weight: bold;
+	width: 100px;
+}
+
+.mensagem-not-email {
+	margin-top: 20px; 
+	font-size: 3em;
+}
+
+
+
+
+/* Message-enviar-view
+*/
+
+.container-messagem-mailbox-message {
+	border:1px solid #c0c0c0;
+	border-radius: 5px;
+}
+
+.meio-message-view {
+	width: 540px;
+	margin: 45px auto;
+}
+
+
+/* Profile View
+*/
+
+
+.meio-profile {
+	width: 960px;
+	margin: 10px auto;
+}
+
+.link-alterar-imagem {
+	display: block;
+	background-color: rgba(000,000,000,0.3);
+	color: #fff;
+	
+}
+
+.container-link-alterar-imagem {
+	position: relative;
+	top: 101px;
+}
+
+.container-link-alterar-imagem-com-imagem {
+	position: relative;
+	top: -27px;
+}
+
+.link-alterar-imagem:hover {
+	color: #fff;
+	text-decoration: none;
+	background-color: rgba(000,000,000,0.8);
+}
+
+.container-informacoes-profile {
+	border: 1px solid #000;
+	border-radius: 6px;
+	width: 75%;
+	margin: 0 auto;
+}
+
+
+/* Alterar-imagem view
+*/
+
+.container-imagem-alt {
+	width: 128px;
+	height: 128px;
+	background-color: #eeeeee;
+	margin-right: 10px;
+}
+
+.border-imagem-alt {
+	border:1px solid #dddddd;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.img-alterado {
+	height: 128px;
+}
+
+/* Search View
+*/
+
+.container-pessoas-search {
+	border: 1px solid black;
+	width: 85%;
+	margin: 10px auto;
+}
+
+.img-search {
+	width: 70px;
+	height: 50px;
+}
+
+.border-search {
+	border: 1px solid black;
+
+}
+
+
+.nome-pessoa-search {
+	width: 60%;
+	text-align: right;
+	padding-right: 10px;
+	font-size: 1.2em;
+	font-weight: bold;
+}

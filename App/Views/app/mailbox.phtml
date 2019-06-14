@@ -1,0 +1,141 @@
+<?php
+	//echo "<pre>";
+	//print_r($this->view->mensagem);
+	//print_r($this->view->profile);
+	//print_r($this->view->mensagem_controle);
+	//print_r($this->view->qtdMensagem);
+	//print_r($this->view->qtdMensagemNaoLido);
+	//print_r($this->view->qtdMensagemLido);
+	//print_r($this->view->qtdMensagemEnviado);
+	//echo "</pre>";
+	
+	$pagina = (!empty($_GET['pag'])) ? $_GET['pag'] : 1;
+	$ultima_pagina = isset($this->view->ultima_pagina) ? $this->view->ultima_pagina : '';
+
+?>
+
+<div class="container-principal" id="mailbox-enviar">
+
+	<header class="topo color-default">
+      <nav class="navbar navbar-expand-md container-menu">
+        <div class="container">
+            <div>
+				<div class="row">
+					<div class="col-12 d-flex">
+						<h1 class="logo"><i class="fab fa-drupal"></i><span>Mailbox</span></h1>
+					</div>
+				</div>
+			</div>
+
+            <button class="navbar-toggler">
+              <i class="fas fa-bars text-white" data-target="#menu-resposivo" data-toggle="collapse"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="menu-responsivo">
+              <ul class="navbar-nav ml-auto menu">
+              	
+                <li class="d-flex  mr-3 lista-menu"><i class="fas fa-home icon-menu"></i><a class="nav-link link-menu" href="#">Home</a></li>
+                <li class="d-flex  mr-3 lista-menu"><i class="fas fa-envelope icon-menu"></i><a class="nav-link link-menu" href="/mailbox">Mailbox</a>
+                </li>
+                <li class="d-flex  mr-5 lista-menu"><i class="fas fa-search icon-menu"></i><a class="nav-link link-menu" href="/search">Search</a></li>
+                <li class="d-flex  mr-2 lista-menu"><i class="fas fa-user icon-menu"></i><a class="nav-link link-menu" href="/profile">Profile</a></li>
+      			<li class="d-flex  mr-2 lista-menu"><i class="fas fa-sign-out-alt icon-menu"></i><a class="nav-link link-menu" href="/sair">Logout</a></li>
+              </ul>
+            </div>
+          
+        </div>
+      </nav>
+    </header>
+
+	
+    <form action="/deletar_mensagem" method="post">
+		<div class="meio">
+			<div class="d-flex">
+				<div class="mb-3 mr-5" style="margin-left: 140px;">
+
+					<div class="color-default  container-principal-imagem">
+						<div class="container-imagem">
+							<?php if ($this->view->profile['imagem'] != '') {?>
+								<img src="upload/<?= $this->view->profile['imagem'] ?>" class="img-alterado">
+							<?php } else { ?>
+								<img src="">
+							<?php } ?>					
+						</div>
+						<p class="nome-usuario-mailbox"><?= $_SESSION['nome'] ?></p>
+					</div>
+
+					<div class="container-dados-mailbox">
+						<div class="d-flex">
+							<p class="item-dados-mailbox"><i class="fas fa-envelope"></i> <?= $this->view->qtdMensagem['Qtd_mensagem'] ?> </p>
+							<p class="item-dados-mailbox"><i class="far fa-paper-plane"></i> <?= $this->view->qtdMensagemEnviado['Enviado'] ?></p>
+						</div>
+						<div class="d-flex">
+							<p class="item-dados-mailbox"><i class="far fa-envelope-open"></i> <?= $this->view->qtdMensagemLido['Lido'] ?> </p>
+							<p class="item-dados-mailbox"><i class="far fa-envelope"></i> <?= $this->view->qtdMensagemNaoLido['Nao_Lido'] ?> </p>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="container-opcoes">
+					<div class="mini-menu-opcoes">
+						<button type="button" class="excluir-lido" id="btn_deletar_mensagem"><i class="fas fa-trash-alt text-dark"></i></button>
+						<!--<button type="submit" class="excluir-lido"><i class="fas fa-trash-alt text-dark"></i></button>-->
+						<!--<button type="submit" class="excluir-lido"><i class="fas fa-envelope-open text-dark"></i></button>
+						<button type="submit" class="lido"><i class="fas fa-envelope text-dark"></i></button>-->
+					</div>
+				</div>
+		
+			</div>
+
+			
+			<div class="box-email mt-4">
+
+				<table class="table table-dark">
+					<thead>
+					    <tr>
+						    <th scope="col">#</th>
+						    <th scope="col">Email</th>
+						    <th scope="col">Titulo</th>
+						    <th scope="col">Descrição</th>
+						    <th scope="col">Data</th>
+					    </tr>
+				  </thead>
+				  <tbody>
+				  		<?php foreach ($this->view->mensagem as $mensagem) { ?>
+				  			<tr id="<?= $mensagem['id_mensagem'] ?>">
+					  			<td scope="row"><input class="checkbox_mailbox" type="checkbox" value="<?= $mensagem['id_mensagem'] ?>" id="checkbox[]" name="checkbox[]"></td>
+					  			<td><?= $mensagem['email_origem']?></td>
+								<td><?= $mensagem['titulo']?></td>
+								<td><?= $mensagem['descricao']?></td>
+								<td><?= $mensagem['data']?></td>
+							</tr>
+				  		<?php } ?>
+					</tbody>
+				</table>
+
+
+				<div class="d-flex">
+					<?php if ($pagina > 1)  { ?>
+						<ul class="pagination">
+		    				<li class="page-item"><a class="page-link  bg-dark text-white" href="/mailbox?pag=<?= $pagina - 1 ?>">Previous</a></li>
+		    			</ul>
+		    		<?php } ?>
+		    		<?php if ($pagina < $ultima_pagina) { ?> 	
+		    			<ul class="pagination ml-auto">
+		    				<li class="page-item"><a class="page-link bg-dark text-white" href="/mailbox?pag=<?= $pagina + 1 ?>">Next</a></li>
+		  				</ul>
+	  				<?php } ?>
+				</div>
+					<!--<button type="submit" id="deletar_checkbox" class="btn btn-dark text-white">Deletar</button>-->	
+			</div>
+
+			
+
+		</div>
+	</form>	
+
+	<div class="mt-3 d-flex justify-content-end mr-5 mt-5 mb-5">
+		<a href="/mailbox-message" class="btn btn-dark text-white">Enviar Mensagem</a>
+	</div>
+
+</div>

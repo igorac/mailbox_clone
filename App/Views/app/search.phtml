@@ -1,0 +1,90 @@
+<?php
+//echo "<pre>";
+//print_r($this->view->profile);
+//print_r($this->view->usuarios);
+//$usuarios = isset($this->view->usuarios) ? $this->view->usuarios : '';
+//print_r($usuarios);
+//echo "</pre>";
+?>
+
+<div class="container-principal" id="mailbox-enviar">
+
+	<header class="topo color-default">
+      <nav class="navbar navbar-expand-md container-menu">
+        <div class="container">
+            <div>
+				<div class="row">
+					<div class="col-12 d-flex">
+						<h1 class="logo"><i class="fab fa-drupal"></i><span>Mailbox</span></h1>
+					</div>
+				</div>
+			</div>
+
+            <button class="navbar-toggler">
+              <i class="fas fa-bars text-white" data-target="#menu-resposivo" data-toggle="collapse"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="menu-resposivo">
+              <ul class="navbar-nav ml-auto menu">
+              	
+                <li class="d-flex  mr-3 lista-menu"><i class="fas fa-home icon-menu"></i><a class="nav-link link-menu" href="#">Home</a></li>
+                <li class="d-flex  mr-3 lista-menu"><i class="fas fa-envelope icon-menu"></i><a class="nav-link link-menu" href="/mailbox">Mailbox</a></li>
+                <li class="d-flex  mr-5 lista-menu"><i class="fas fa-search icon-menu"></i><a class="nav-link link-menu" href="/search">Search</a></li>
+                <li class="d-flex  mr-2 lista-menu"><i class="fas fa-user icon-menu"></i><a class="nav-link link-menu" href="/profile">Profile</a></li>
+      			<li class="d-flex  mr-2 lista-menu"><i class="fas fa-sign-out-alt icon-menu"></i><a class="nav-link link-menu" href="/sair">Logout</a></li>
+              </ul>
+            </div>
+          
+        </div>
+      </nav>
+    </header>
+
+    <div class="meio-profile">
+    	
+
+		<div class="container-informacoes-profile my-5">
+			<div class="row">
+				<div class="col-10"  style="margin-left: 9%;">
+					<form action="/search" method="get">
+						<div class="input-group mb-2 mr-sm-2 mt-3 mb-5">
+						    <input type="text" class="form-control" id="id_search" name="search" placeholder="Search">
+						    <div class="input-group-append">
+						      <div class="input-group-text">
+						      	<button type="submit" class="btn" style="height: 27px;">
+						      		<i class="fas fa-search"></i></button>
+						      	</div>
+						    </div>
+						</div>
+					</form>
+				</div>		
+			</div>
+
+			
+				<table class="mb-3" style="margin-left: 74px;">
+					<tbody class="border-search">
+					<?php foreach((array)$this->view->usuarios as $user => $value) { ?>	
+						<tr>
+							<td>
+								<a href="/mailbox-message?email=<?=$value['email']?>" class="ml-2 btn btn-sm btn-dark text-white py-2" >Enviar Mensagem</a>
+							</td>
+							<td class="nome-pessoa-search" style="">
+								<?= $value['nome'] ?>
+							</td>
+							<td>
+							<?php if ($value['imagem'] != '') {?>	
+									<img src="upload/<?= $value['imagem'] ?>" class="border img-search my-2 mr-2">
+							<?php } else { ?>	
+									<img class="border img-search my-2 mr-2">
+							<?php } ?>
+							</td>
+						</tr>
+					<?php } ?>	
+					</tbody>
+				</table>
+		
+
+		</div>
+
+
+    </div>
+
+</div>

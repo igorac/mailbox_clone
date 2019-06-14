@@ -1,0 +1,118 @@
+<?php
+	
+	
+	//print_r($this->view->profile['imagem']);
+	//print_r($_POST);
+	
+	
+?>
+
+<div class="container-principal" id="mailbox-enviar">
+
+	<header class="topo color-default">
+      <nav class="navbar navbar-expand-md container-menu">
+        <div class="container">
+            <div>
+				<div class="row">
+					<div class="col-12 d-flex">
+						<h1 class="logo"><i class="fab fa-drupal"></i><span>Mailbox</span></h1>
+					</div>
+				</div>
+			</div>
+
+            <button class="navbar-toggler">
+              <i class="fas fa-bars text-white" data-target="#menu-resposivo" data-toggle="collapse"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="menu-resposivo">
+              <ul class="navbar-nav ml-auto menu">
+              	
+                <li class="d-flex  mr-3 lista-menu"><i class="fas fa-home icon-menu"></i><a class="nav-link link-menu" href="#">Home</a></li>
+                <li class="d-flex  mr-3 lista-menu"><i class="fas fa-envelope icon-menu"></i><a class="nav-link link-menu" href="/mailbox">Mailbox</a></li>
+                <li class="d-flex  mr-5 lista-menu"><i class="fas fa-search icon-menu"></i><a class="nav-link link-menu" href="/search">Search</a></li>
+                <li class="d-flex  mr-2 lista-menu"><i class="fas fa-user icon-menu"></i><a class="nav-link link-menu" href="/profile">Profile</a></li>
+      			<li class="d-flex  mr-2 lista-menu"><i class="fas fa-sign-out-alt icon-menu"></i><a class="nav-link link-menu" href="/sair">Logout</a></li>
+              </ul>
+            </div>
+          
+        </div>
+      </nav>
+    </header>
+
+    <div class="meio-profile">
+    	<div class="d-flex mb-4">
+			<div class="mb-3 mr-5" style="margin-left: 33%;">
+
+				<div class="color-default  container-principal-imagem">
+					<div class="container-imagem">
+						<?php if ($this->view->profile['imagem'] != '') { ?>
+							<img src="upload/<?= $this->view->profile['imagem'] ?>" class="img-alterado">
+							<div class="text-center container-link-alterar-imagem-com-imagem">
+								<a class="link-alterar-imagem" href="/alterar_imagem_view">Alterar</a>
+							</div>
+						<?php } else { ?>
+							<img src="">
+							<div class="text-center container-link-alterar-imagem">
+								<a class="link-alterar-imagem" href="/alterar_imagem_view">Alterar</a>
+							</div>
+						<?php } ?>	
+						
+					</div>
+					<p class="nome-usuario-mailbox">Nome do Usuário</p>
+				</div>
+
+				<div class="container-dados-mailbox">
+					<div class="d-flex">
+						<p class="item-dados-mailbox"><i class="fas fa-envelope"></i> <?= $this->view->qtdMensagem['Qtd_mensagem'] ?> </p>
+						<p class="item-dados-mailbox"><i class="far fa-paper-plane"></i> <?= $this->view->qtdMensagemEnviado['Enviado'] ?></p>
+					</div>
+					<div class="d-flex">
+						<p class="item-dados-mailbox"><i class="far fa-envelope-open"></i> <?= $this->view->qtdMensagemLido['Lido'] ?> </p>
+						<p class="item-dados-mailbox"><i class="far fa-envelope"></i> <?= $this->view->qtdMensagemNaoLido['Nao_Lido'] ?> </p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container-informacoes-profile mb-5">
+			<div class="row">
+				<div class="col-10"  style="margin-left: 6%;">
+
+					<form class="ml-4 mt-4" id="form_dados" action="/alterar_profile" method="post">
+					  <div class="form-group">
+					    <label for="id_nome_completo">Nome Completo</label>
+					    <input type="text" value="<?= $this->view->profile['nome'] ?>" class="form-control disabled" id="id_nome_completo" name="nome" disabled>
+					  </div>
+					  <br>
+					  <div class="form-group">
+					    <label for="id_cpf_cnpj">CPF</label>
+					    <input type="text" class="form-control disabled" value="<?= $this->view->profile['cpf'] ?>" id="id_cpf_cnpj" name="cpf" disabled>
+					  </div>
+					  <div class="form-group">
+					    <label for="id_data">Data Nascimento</label>
+					    <input type="date" class="form-control disabled" value="<?= $this->view->profile['data_nascimento'] ?>" id="id_data" name="data_nascimento" disabled>
+					  </div>
+					  <br>
+					  <div class="form-group">
+					    <label for="id_data">Sexo</label>
+					    <input type="text" class="form-control disabled" value="<?= $this->view->profile['sexo'] ?>" id="id_sexo" name="sexo" disabled>
+					  </div>
+					  <div class="form-group">
+					    <label for="id_data">Telefone</label>
+					    <input type="text" class="form-control disabled" value="<?= $this->view->profile['telefone'] ?>" id="id_telefone" name="telefone" disabled>
+					  </div>		 
+					  <div class="d-flex justify-content-end mb-3">
+					  	<a href="/alterar_senha_view" class="btn  btn-dark text-white mr-4">Alterar Senha</a>
+					  	<button type="button" id="btn_editar_campo" class="btn btn-dark text-white mr-4">Editar</button>
+						<button type="submit" class="btn  btn-dark text-white mr-4" id="btn_alterar_profile" disabled>Alterar</button>
+						<button type="Reset"  class="btn  btn-dark text-white">Cancelar</button>
+					  </div>
+					</form>
+					
+				</div>		
+			</div>
+		</div>
+
+    </div>
+
+</div>

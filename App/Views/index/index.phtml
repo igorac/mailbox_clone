@@ -1,0 +1,68 @@
+<div class="container-principal">
+
+	<div class="topo color-default">
+		<div class="row">
+			<div class="col-12 col-md-12 d-flex justify-content-center">
+				<h1 class="Logo"><i class="fab fa-drupal"></i><span>Mailbox</span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="meio">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<form action="/autenticar" method="post">
+						<div class="modal-personalizado color-default">
+							
+							<div class="header-modal">
+								<i class="fab fa-drupal logo-header-modal"></i>
+							</div>
+
+							<div class="body-modal">
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+									    <div class="input-group-text"><i class="far fa-envelope"></i></div>
+									</div>
+									<input type="text" class="form-control caixa-baixa" id="id_email" name="email" placeholder="Email">
+								</div>
+
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+									    <div class="input-group-text"><i class="fas fa-asterisk"></i></div>
+									</div>
+									<input type="password" class="form-control" id="id_senha" name="senha" placeholder="Senha">
+								</div>
+							</div>
+
+							<div class="footer-modal">
+								<div class="d-flex justify-content-end">
+									<a href="/inscreverse" class="btn  botao">Cadastrar</a>
+									<button type="submit" class="btn mr-5 botao">Entrar</button>
+								</div>
+							</div>
+							
+						</div>
+					</form>
+					
+					<div class="row">
+						<div class="col text-center">
+							<?php if(isset($_GET['login']) && $_GET['login'] == 'erro') { ?>
+								<span class="text-danger font-weight-bold">*E-mail e/ou senha inválido(s)</span>
+							<?php } ?>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="rodape color-default">
+		<div class="row">
+			<div class="col-12 d-flex justify-content-center">
+				<h2 class="texto-rodape">©Copyright 1999 - 2019</h2>
+			</div>
+		</div>
+	</div>-->
+</div>

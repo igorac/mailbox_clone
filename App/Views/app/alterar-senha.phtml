@@ -1,0 +1,50 @@
+<?php
+	//print_r($this->view->profile);
+?>
+
+<div class="container-principal" id="mailbox-enviar">
+
+	<header class="topo color-default">
+		<div class="row">
+			<div class="col-12 col-md-12 d-flex justify-content-center">
+				<h1 class="Logo"><i class="fab fa-drupal"></i><span>Mailbox</span></h1>
+			</div>
+		</div>
+    </header>
+
+    <div class="meio-profile mt-5 mr-5">
+
+    	<div class="row">
+    		<div class="col-8">
+    			<form id="form_dados" action="/alterar_senha" method="post">
+	    			<div class="border-imagem-alt d-flex">
+	    				<div class="container-imagem-alt">
+	    					<?php if ($this->view->profile['imagem'] != '') { ?>
+	    						<img src="upload/<?= $this->view->profile['imagem'] ?>" class="img-alterado">
+	    					<?php } else { ?>	
+	    						<img src="" class="img-alterado">
+	    					<?php } ?>		
+	    				</div>
+	    				<div class="col-8 ml-5">
+							<input type="text" class="form-control" placeholder="First name" value="<?= $this->view->profile['nome'] ?>" disabled>
+							<input type="password" class="form-control" placeholder="Senha Atual" name="senha_atual">
+							<br><br>	
+							<input type="password" class="form-control" placeholder="Nova Senha" id="id_senha" name="senha">
+							<input type="password" class="form-control" placeholder="Confirmar Senha" name="senha_confirm">
+
+	    				</div>
+	    			</div>
+
+	    			<div class="mt-4 d-flex justify-content-end">
+	    				<button type="submit" class="text-white btn btn-dark mr-3">Alterar</button>
+	    				<button type="Reset"  class="text-white btn btn-dark mr-3">Cancelar</button>
+	    				<a href="/profile" class="btn btn-dark text-white">Voltar</a>
+	    			</div>
+
+	    		</form>	
+    		</div>
+    	</div>
+
+    </div>
+
+</div>
